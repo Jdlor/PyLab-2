@@ -2,7 +2,7 @@ import os;
 import telebot;
 import array as arr
 
-bot = telebot.TeleBot('6826056263:AAHsQc4sYaBDBao9mV27JZOeQlxd_KMuu50')
+bot = telebot.TeleBot('token')
 
 class Runer:
     def __init__(self,name):
