@@ -23,11 +23,12 @@ def process_FIO(message):
         bot.register_next_step_handler(msg, process_type)
     except:
         bot.reply_to(message,"Что-то пошло не так")
+
 def process_type(message):
     try:
         id=message.chat.id
         type= message.text
-        if not type.isdigit() and type>0 and type <6:
+        if (not type.isdigit()) or type<"0" or type >"6":
             msg = bot.reply_to(message,"введите число от 1 до 5")
             bot.register_next_step_handler(msg, process_type)
             return
@@ -37,6 +38,7 @@ def process_type(message):
 
     except:
         bot.reply_to(message,"Что-то пошло не так")
+
 
 @bot.message_handler(commands=['my_data'])
 def data_command(message):
